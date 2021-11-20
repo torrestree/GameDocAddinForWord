@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using Word = Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Word;
+using Microsoft.Office.Core;
 
 namespace GameDocAddinForWord
 {
@@ -17,6 +18,11 @@ namespace GameDocAddinForWord
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
+        }
+
+        protected override IRibbonExtensibility CreateRibbonExtensibilityObject()
+        {
+            return new MainRibbon();
         }
 
         #region VSTO generated code
