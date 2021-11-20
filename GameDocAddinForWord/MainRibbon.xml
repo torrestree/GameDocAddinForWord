@@ -1,13 +1,58 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
-  <ribbon>
-    <tabs>
-      <tab idMso="TabAddIns">
-        <group id="MyGroup"
-               label="My Group">
-        </group>
-      </tab>
-    </tabs>
-  </ribbon>
+	<ribbon>
+		<tabs>
+			<tab id="TabGameDoc" label="游戏文档">
+				<group id="GroupDesignDoc" label="策划文档">
+					<button id="BtnDesignDocDashboardTable" label="面板表单" onAction="BtnDesignDocDashboardTable_OnAction"/>
+					<button id="BtnDesignDocModelTable" label="模型表单" onAction="BtnDesignDocModelTable_OnAction"/>
+					<button id="BtnDesignDocSaveTable" label="存档表单" onAction="BtnDesignDocSaveTable_OnAction"/>
+					<button id="BtnDesignDocEnumTable" label="枚举表单" onAction="BtnDesignDocEnumTable_OnAction"/>
+					<separator id="SepDesignDoc1"/>
+					<splitButton id="SbtnDesignDocType">
+						<button id="BtnDesignDocType" label="类型（文）"/>
+						<menu id="MenuDesignDocType">
+							<checkBox id="CkbDesignDocTypeText" label="文本"/>
+							<checkBox id="CkbDesignDocTypeInt" label="整型"/>
+							<checkBox id="CkbDesignDocTypeFloat" label="浮点"/>
+							<checkBox id="CkbDesignDocTypeBool" label="布尔"/>
+							<checkBox id="CkbDesignDocTypeEnum" label="枚举"/>
+							<checkBox id="CkbDesignDocTypeList" label="集合"/>
+						</menu>
+					</splitButton>
+					<splitButton id="SbtnDesignDocSource">
+						<button id="BtnDesignDocSource" label="来源（存）"/>
+						<menu id="MenuDesignDocSource">
+							<checkBox id="CkbDesignDocSourceSave" label="存档"/>
+							<checkBox id="CkbDesignDocSourceModel" label="模型"/>
+							<checkBox id="CkbDesignDocSourceSystem" label="系统参数"/>
+							<checkBox id="CkbDesignDocSourceInput" label="外部传入"/>
+						</menu>
+					</splitButton>
+					<separator id="SepDesignDoc2"/>
+					<button id="BtnDesignDocSimpleProperty" label="简单属性"/>
+					<button id="BtnDesignDocCompoundProperty" label="复合属性"/>
+				</group>
+				<group id="GroupDevelopDoc" label="开发文档">
+					<button id="BtnDevelopDocPropertyTable" label="属性表单"/>
+					<button id="BtnDevelopDocEventTable" label="事件表单"/>
+					<button id="BtnDevelopDocMethodTable" label="方法表单"/>
+					<button id="BtnDevelopDocEnumTable" label="枚举表单"/>
+					<separator id="SepDevelopDoc1"/>
+					<splitButton id="SbtnDevelopDocType">
+						<button id="BtnDevelopDocType" label="类型（String）"/>
+						<menu id="MenuDevelopDocType">
+							<checkBox id="CkbDevelopDocTypeString" label="String"/>
+							<checkBox id="CkbDevelopDocTypeInt" label="Int"/>
+							<checkBox id="CkbDevelopDocTypeFloat" label="Float"/>
+							<checkBox id="CkbDevelopDocTypeBool" label="Bool"/>
+						</menu>
+					</splitButton>
+					<separator id="SepDevelopDoc2"/>
+					<button id="BtnDevelopDocCompoundProperty" label="复合属性"/>
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
 </customUI>
 

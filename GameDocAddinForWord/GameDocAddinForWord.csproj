@@ -156,6 +156,10 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="Common\Helpers.cs" />
+    <Compile Include="DesignDoc\DashboardTable.cs" />
+    <Compile Include="DesignDoc\EnumTable.cs" />
+    <Compile Include="DesignDoc\ModelTable.cs" />
     <Compile Include="MainRibbon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -169,6 +173,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="GameDocAddinForWord_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -191,9 +196,21 @@
   <ItemGroup>
     <EmbeddedResource Include="MainRibbon.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DevelopDoc\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GameDocAddinForWord_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3AA556DD715CE051B6724DC8198588FC5CEC91A3</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

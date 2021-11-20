@@ -5,26 +5,9 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows.Forms;
 using Office = Microsoft.Office.Core;
-
-// TODO:  Follow these steps to enable the Ribbon (XML) item:
-
-// 1: Copy the following code block into the ThisAddin, ThisWorkbook, or ThisDocument class.
-
-//  protected override Microsoft.Office.Core.IRibbonExtensibility CreateRibbonExtensibilityObject()
-//  {
-//      return new MainRibbon();
-//  }
-
-// 2. Create callback methods in the "Ribbon Callbacks" region of this class to handle user
-//    actions, such as clicking a button. Note: if you have exported this Ribbon from the Ribbon designer,
-//    move your code from the event handlers to the callback methods and modify the code to work with the
-//    Ribbon extensibility (RibbonX) programming model.
-
-// 3. Assign attributes to the control tags in the Ribbon XML file to identify the appropriate callback methods in your code.  
-
-// For more information, see the Ribbon XML documentation in the Visual Studio Tools for Office Help.
-
+using Word = Microsoft.Office.Interop.Word;
 
 namespace GameDocAddinForWord
 {
@@ -32,10 +15,7 @@ namespace GameDocAddinForWord
     public class MainRibbon : Office.IRibbonExtensibility
     {
         private Office.IRibbonUI ribbon;
-
-        public MainRibbon()
-        {
-        }
+        private Word.Application application;
 
         #region IRibbonExtensibility Members
 
@@ -51,7 +31,25 @@ namespace GameDocAddinForWord
 
         public void Ribbon_Load(Office.IRibbonUI ribbonUI)
         {
-            this.ribbon = ribbonUI;
+            ribbon = ribbonUI;
+            application = Globals.ThisAddIn.Application;
+        }
+
+        public void BtnDesignDocDashboardTable_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.DashboardTable.Insert(application);
+        }
+        public void BtnDesignDocModelTable_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.ModelTable.Insert(application);
+        }
+        public void BtnDesignDocSaveTable_OnAction(Office.IRibbonControl control)
+        {
+            MessageBox.Show("功能尚待开发！");
+        }
+        public void BtnDesignDocEnumTable_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.EnumTable.Insert(application);
         }
 
         #endregion
