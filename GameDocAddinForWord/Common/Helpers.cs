@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace GameDocAddinForWord.Common
 {
     internal static class Helpers
     {
+        public const string MsgUnderDeveloping = "功能尚在开发中！";
+        public const string MsgUnmatchedTable = "不在适配的表单中！";
+
         public static Word.Table CreateTable(this Word.Application application, int columns)
         {
             Word.Range range = application.Selection.Range;
@@ -25,6 +29,25 @@ namespace GameDocAddinForWord.Common
         {
             column.PreferredWidthType = Word.WdPreferredWidthType.wdPreferredWidthPercent;
             column.PreferredWidth = width;
+        }
+        public static bool GetRowIndex(this Word.Application application, int columnsMin, out int rowIndex, out Word.Table table)
+        {
+            rowIndex = 0;
+            table = null;
+
+            if (application.Selection.Type != Word.WdSelectionType.wdSelectionIP) return false;
+            if (application.Selection.Tables.Count != 1) return false;
+            if (application.Selection.Tables[1].Columns.Count < columnsMin) return false;
+            try
+            {
+                rowIndex = application.Selection.Range.Cells[1].RowIndex;
+                table = application.Selection.Tables[1];
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         public static void InsertText(this Word.Selection selection, string text)
         {

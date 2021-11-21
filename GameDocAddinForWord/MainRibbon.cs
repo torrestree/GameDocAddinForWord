@@ -45,11 +45,66 @@ namespace GameDocAddinForWord
         }
         public void BtnDesignDocSaveTable_OnAction(Office.IRibbonControl control)
         {
-            MessageBox.Show("功能尚待开发！");
+            MessageBox.Show(Common.Helpers.MsgUnderDeveloping);
         }
         public void BtnDesignDocEnumTable_OnAction(Office.IRibbonControl control)
         {
             DesignDoc.EnumTable.Insert(application);
+        }
+
+        public string BtnDesignDocType_GetLabel(Office.IRibbonControl control)
+        {
+            string label = "类型（type）";
+            switch (DesignDoc.ValueType.SelectedType)
+            {
+                case DesignDoc.ValueType.ValueTypes.Text: return label.Replace("type", "文");
+                case DesignDoc.ValueType.ValueTypes.Int: return label.Replace("type", "整");
+                case DesignDoc.ValueType.ValueTypes.Float: return label.Replace("type", "浮");
+                case DesignDoc.ValueType.ValueTypes.Bool: return label.Replace("type", "布");
+                case DesignDoc.ValueType.ValueTypes.Enum: return label.Replace("type", "枚");
+                case DesignDoc.ValueType.ValueTypes.List: return label.Replace("type", "集");
+                default: return label.Replace("type", "");
+            }
+        }
+        public bool CkbDesignDocType_GetPressed(Office.IRibbonControl control)
+        {
+            switch (control.Id)
+            {
+                case "CkbDesignDocTypeText": return DesignDoc.ValueType.SelectedType == DesignDoc.ValueType.ValueTypes.Text;
+                case "CkbDesignDocTypeInt": return DesignDoc.ValueType.SelectedType == DesignDoc.ValueType.ValueTypes.Int;
+                case "CkbDesignDocTypeFloat": return DesignDoc.ValueType.SelectedType == DesignDoc.ValueType.ValueTypes.Float;
+                case "CkbDesignDocTypeBool": return DesignDoc.ValueType.SelectedType == DesignDoc.ValueType.ValueTypes.Bool;
+                case "CkbDesignDocTypeEnum": return DesignDoc.ValueType.SelectedType == DesignDoc.ValueType.ValueTypes.Enum;
+                case "CkbDesignDocTypeList": return DesignDoc.ValueType.SelectedType == DesignDoc.ValueType.ValueTypes.List;
+                default: return false;
+            }
+        }
+        public void CkbDesignDocType_OnAction(Office.IRibbonControl control, bool pressed)
+        {
+            switch (control.Id)
+            {
+                case "CkbDesignDocTypeText": DesignDoc.ValueType.SelectedType = DesignDoc.ValueType.ValueTypes.Text; break;
+                case "CkbDesignDocTypeInt": DesignDoc.ValueType.SelectedType = DesignDoc.ValueType.ValueTypes.Int; break;
+                case "CkbDesignDocTypeFloat": DesignDoc.ValueType.SelectedType = DesignDoc.ValueType.ValueTypes.Float; break;
+                case "CkbDesignDocTypeBool": DesignDoc.ValueType.SelectedType = DesignDoc.ValueType.ValueTypes.Bool; break;
+                case "CkbDesignDocTypeEnum": DesignDoc.ValueType.SelectedType = DesignDoc.ValueType.ValueTypes.Enum; break;
+                case "CkbDesignDocTypeList": DesignDoc.ValueType.SelectedType = DesignDoc.ValueType.ValueTypes.List; break;
+            }
+
+            ribbon.InvalidateControl("CkbDesignDocTypeText");
+            ribbon.InvalidateControl("CkbDesignDocTypeInt");
+            ribbon.InvalidateControl("CkbDesignDocTypeFloat");
+            ribbon.InvalidateControl("CkbDesignDocTypeBool");
+            ribbon.InvalidateControl("CkbDesignDocTypeEnum");
+            ribbon.InvalidateControl("CkbDesignDocTypeList");
+
+            ribbon.InvalidateControl("BtnDesignDocType");
+
+            DesignDoc.ValueType.Overwrite(application);
+        }
+        public void BtnDesignDocType_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.ValueType.Overwrite(application);
         }
 
         #endregion

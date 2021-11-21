@@ -10,14 +10,14 @@
 					<button id="BtnDesignDocEnumTable" label="枚举表单" onAction="BtnDesignDocEnumTable_OnAction"/>
 					<separator id="SepDesignDoc1"/>
 					<splitButton id="SbtnDesignDocType">
-						<button id="BtnDesignDocType" label="类型（文）"/>
+						<button id="BtnDesignDocType" getLabel="BtnDesignDocType_GetLabel" onAction="BtnDesignDocType_OnAction"/>
 						<menu id="MenuDesignDocType">
-							<checkBox id="CkbDesignDocTypeText" label="文本"/>
-							<checkBox id="CkbDesignDocTypeInt" label="整型"/>
-							<checkBox id="CkbDesignDocTypeFloat" label="浮点"/>
-							<checkBox id="CkbDesignDocTypeBool" label="布尔"/>
-							<checkBox id="CkbDesignDocTypeEnum" label="枚举"/>
-							<checkBox id="CkbDesignDocTypeList" label="集合"/>
+							<checkBox id="CkbDesignDocTypeText" label="文本" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
+							<checkBox id="CkbDesignDocTypeInt" label="整型" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
+							<checkBox id="CkbDesignDocTypeFloat" label="浮点" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
+							<checkBox id="CkbDesignDocTypeBool" label="布尔" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
+							<checkBox id="CkbDesignDocTypeEnum" label="枚举" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
+							<checkBox id="CkbDesignDocTypeList" label="集合" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
 						</menu>
 					</splitButton>
 					<splitButton id="SbtnDesignDocSource">
