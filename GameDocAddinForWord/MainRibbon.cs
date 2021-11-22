@@ -66,6 +66,10 @@ namespace GameDocAddinForWord
                 default: return label.Replace("type", "");
             }
         }
+        public void BtnDesignDocType_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.ValueType.Overwrite(application);
+        }
         public bool CkbDesignDocType_GetPressed(Office.IRibbonControl control)
         {
             switch (control.Id)
@@ -102,9 +106,52 @@ namespace GameDocAddinForWord
 
             DesignDoc.ValueType.Overwrite(application);
         }
-        public void BtnDesignDocType_OnAction(Office.IRibbonControl control)
+
+        public string BtnDesignDocSource_GetLabel(Office.IRibbonControl control)
         {
-            DesignDoc.ValueType.Overwrite(application);
+            string label = "来源（type）";
+            switch (DesignDoc.ValueSource.SelectedSource)
+            {
+                case DesignDoc.ValueSource.ValueSources.Save: return label.Replace("type", "存");
+                case DesignDoc.ValueSource.ValueSources.Model: return label.Replace("type", "模");
+                case DesignDoc.ValueSource.ValueSources.System: return label.Replace("type", "系");
+                case DesignDoc.ValueSource.ValueSources.Input: return label.Replace("type", "入");
+                default: return label.Replace("type", "");
+            }
+        }
+        public void BtnDesignDocSource_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.ValueSource.Overwirte(application);
+        }
+        public bool CkbDesignDocSource_GetPressed(Office.IRibbonControl control)
+        {
+            switch (control.Id)
+            {
+                case "CkbDesignDocSourceSave": return DesignDoc.ValueSource.SelectedSource == DesignDoc.ValueSource.ValueSources.Save;
+                case "CkbDesignDocSourceModel": return DesignDoc.ValueSource.SelectedSource == DesignDoc.ValueSource.ValueSources.Model;
+                case "CkbDesignDocSourceSystem": return DesignDoc.ValueSource.SelectedSource == DesignDoc.ValueSource.ValueSources.System;
+                case "CkbDesignDocSourceInput": return DesignDoc.ValueSource.SelectedSource == DesignDoc.ValueSource.ValueSources.Input;
+                default: return false;
+            }
+        }
+        public void CkbDesignDocSource_OnAction(Office.IRibbonControl control, bool pressed)
+        {
+            switch (control.Id)
+            {
+                case "CkbDesignDocSourceSave": DesignDoc.ValueSource.SelectedSource = DesignDoc.ValueSource.ValueSources.Save; break;
+                case "CkbDesignDocSourceModel": DesignDoc.ValueSource.SelectedSource = DesignDoc.ValueSource.ValueSources.Model; break;
+                case "CkbDesignDocSourceSystem": DesignDoc.ValueSource.SelectedSource = DesignDoc.ValueSource.ValueSources.System; break;
+                case "CkbDesignDocSourceInput": DesignDoc.ValueSource.SelectedSource = DesignDoc.ValueSource.ValueSources.Input; break;
+            }
+
+            ribbon.InvalidateControl("CkbDesignDocSourceSave");
+            ribbon.InvalidateControl("CkbDesignDocSourceModel");
+            ribbon.InvalidateControl("CkbDesignDocSourceSystem");
+            ribbon.InvalidateControl("CkbDesignDocSourceInput");
+
+            ribbon.InvalidateControl("BtnDesignDocSource");
+
+            DesignDoc.ValueSource.Overwirte(application);
         }
 
         #endregion

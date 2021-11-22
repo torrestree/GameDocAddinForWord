@@ -21,12 +21,12 @@
 						</menu>
 					</splitButton>
 					<splitButton id="SbtnDesignDocSource">
-						<button id="BtnDesignDocSource" label="来源（存）"/>
+						<button id="BtnDesignDocSource" getLabel="BtnDesignDocSource_GetLabel" onAction="BtnDesignDocSource_OnAction"/>
 						<menu id="MenuDesignDocSource">
-							<checkBox id="CkbDesignDocSourceSave" label="存档"/>
-							<checkBox id="CkbDesignDocSourceModel" label="模型"/>
-							<checkBox id="CkbDesignDocSourceSystem" label="系统参数"/>
-							<checkBox id="CkbDesignDocSourceInput" label="外部传入"/>
+							<checkBox id="CkbDesignDocSourceSave" label="存档" getPressed="CkbDesignDocSource_GetPressed" onAction="CkbDesignDocSource_OnAction"/>
+							<checkBox id="CkbDesignDocSourceModel" label="模型" getPressed="CkbDesignDocSource_GetPressed" onAction="CkbDesignDocSource_OnAction"/>
+							<checkBox id="CkbDesignDocSourceSystem" label="系统参数" getPressed="CkbDesignDocSource_GetPressed" onAction="CkbDesignDocSource_OnAction"/>
+							<checkBox id="CkbDesignDocSourceInput" label="外部传入" getPressed="CkbDesignDocSource_GetPressed" onAction="CkbDesignDocSource_OnAction"/>
 						</menu>
 					</splitButton>
 					<separator id="SepDesignDoc2"/>
