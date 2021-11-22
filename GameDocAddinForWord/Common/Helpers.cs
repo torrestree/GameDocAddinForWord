@@ -10,9 +10,6 @@ namespace GameDocAddinForWord.Common
 {
     internal static class Helpers
     {
-        public const string MsgUnderDeveloping = "功能尚在开发中！";
-        public const string MsgUnmatchedTable = "不在适配的表单中！";
-
         public static Word.Table CreateTable(this Word.Application application, int columns)
         {
             Word.Range range = application.Selection.Range;

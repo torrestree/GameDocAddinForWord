@@ -3,54 +3,7 @@
 	<ribbon>
 		<tabs>
 			<tab id="TabGameDoc" label="游戏文档">
-				<group id="GroupDesignDoc" label="策划文档">
-					<button id="BtnDesignDocDashboardTable" label="面板表单" onAction="BtnDesignDocDashboardTable_OnAction"/>
-					<button id="BtnDesignDocModelTable" label="模型表单" onAction="BtnDesignDocModelTable_OnAction"/>
-					<button id="BtnDesignDocSaveTable" label="存档表单" onAction="BtnDesignDocSaveTable_OnAction"/>
-					<button id="BtnDesignDocEnumTable" label="枚举表单" onAction="BtnDesignDocEnumTable_OnAction"/>
-					<separator id="SepDesignDoc1"/>
-					<splitButton id="SbtnDesignDocType">
-						<button id="BtnDesignDocType" getLabel="BtnDesignDocType_GetLabel" onAction="BtnDesignDocType_OnAction"/>
-						<menu id="MenuDesignDocType">
-							<checkBox id="CkbDesignDocTypeText" label="文本" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
-							<checkBox id="CkbDesignDocTypeInt" label="整型" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
-							<checkBox id="CkbDesignDocTypeFloat" label="浮点" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
-							<checkBox id="CkbDesignDocTypeBool" label="布尔" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
-							<checkBox id="CkbDesignDocTypeEnum" label="枚举" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
-							<checkBox id="CkbDesignDocTypeList" label="集合" getPressed="CkbDesignDocType_GetPressed" onAction="CkbDesignDocType_OnAction"/>
-						</menu>
-					</splitButton>
-					<splitButton id="SbtnDesignDocSource">
-						<button id="BtnDesignDocSource" getLabel="BtnDesignDocSource_GetLabel" onAction="BtnDesignDocSource_OnAction"/>
-						<menu id="MenuDesignDocSource">
-							<checkBox id="CkbDesignDocSourceSave" label="存档" getPressed="CkbDesignDocSource_GetPressed" onAction="CkbDesignDocSource_OnAction"/>
-							<checkBox id="CkbDesignDocSourceModel" label="模型" getPressed="CkbDesignDocSource_GetPressed" onAction="CkbDesignDocSource_OnAction"/>
-							<checkBox id="CkbDesignDocSourceSystem" label="系统参数" getPressed="CkbDesignDocSource_GetPressed" onAction="CkbDesignDocSource_OnAction"/>
-							<checkBox id="CkbDesignDocSourceInput" label="外部传入" getPressed="CkbDesignDocSource_GetPressed" onAction="CkbDesignDocSource_OnAction"/>
-						</menu>
-					</splitButton>
-					<separator id="SepDesignDoc2"/>
-					<button id="BtnDesignDocSimpleProperty" label="简单属性" onAction="BtnDesignDocSimpleProperty_OnAction"/>
-					<button id="BtnDesignDocCompoundProperty" label="复合属性" onAction="BtnDesignDocCompoundProperty_OnAction"/>
-				</group>
-				<group id="GroupDevelopDoc" label="开发文档">
-					<button id="BtnDevelopDocPropertyTable" label="属性表单"/>
-					<button id="BtnDevelopDocEventTable" label="事件表单"/>
-					<button id="BtnDevelopDocMethodTable" label="方法表单"/>
-					<button id="BtnDevelopDocEnumTable" label="枚举表单"/>
-					<separator id="SepDevelopDoc1"/>
-					<splitButton id="SbtnDevelopDocType">
-						<button id="BtnDevelopDocType" label="类型（String）"/>
-						<menu id="MenuDevelopDocType">
-							<checkBox id="CkbDevelopDocTypeString" label="String"/>
-							<checkBox id="CkbDevelopDocTypeInt" label="Int"/>
-							<checkBox id="CkbDevelopDocTypeFloat" label="Float"/>
-							<checkBox id="CkbDevelopDocTypeBool" label="Bool"/>
-						</menu>
-					</splitButton>
-					<separator id="SepDevelopDoc2"/>
-					<button id="BtnDevelopDocCompoundProperty" label="复合属性"/>
-				</group>
+				
 			</tab>
 		</tabs>
 	</ribbon>

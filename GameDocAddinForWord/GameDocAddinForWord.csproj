@@ -157,12 +157,6 @@
   -->
   <ItemGroup>
     <Compile Include="Common\Helpers.cs" />
-    <Compile Include="DesignDoc\DashboardTable.cs" />
-    <Compile Include="DesignDoc\EnumTable.cs" />
-    <Compile Include="DesignDoc\ModelTable.cs" />
-    <Compile Include="DesignDoc\SimpleProperty.cs" />
-    <Compile Include="DesignDoc\ValueSource.cs" />
-    <Compile Include="DesignDoc\ValueType.cs" />
     <Compile Include="MainRibbon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -199,6 +193,7 @@
     <EmbeddedResource Include="MainRibbon.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DesignDoc\" />
     <Folder Include="DevelopDoc\" />
   </ItemGroup>
   <PropertyGroup>
