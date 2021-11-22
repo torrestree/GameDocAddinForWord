@@ -13,22 +13,28 @@ namespace GameDocAddinForWord.DesignDoc
     {
         public static ValueSources SelectedSource { get; set; }
 
-        public static void Overwirte(Word.Application application)
+        public static void TryOverwrite(Word.Application application)
         {
-            if (application.GetRowIndex(4, out int rowIndex, out Word.Table table))
-            {
-                Word.Range range = table.Rows[rowIndex].Cells[4].Range;
-                switch (SelectedSource)
-                {
-                    case ValueSources.Save: range.Text = "存档"; break;
-                    case ValueSources.Model: range.Text = "模型"; break;
-                    case ValueSources.System: range.Text = "系统参数"; break;
-                    case ValueSources.Input: range.Text = "外部输入"; break;
-                    default: break;
-                }
-            }
+            if (CanOverwrite(application, out int rowIndex, out Word.Table table))
+                Overwrite(rowIndex, table);
             else
                 MessageBox.Show(Helpers.MsgUnmatchedTable);
+        }
+        public static bool CanOverwrite(Word.Application application, out int rowIndex, out Word.Table table)
+        {
+            return application.GetRowIndex(4, out rowIndex, out table);
+        }
+        public static void Overwrite(int rowIndex, Word.Table table)
+        {
+            Word.Range range = table.Rows[rowIndex].Cells[4].Range;
+            switch (SelectedSource)
+            {
+                case ValueSources.Save: range.Text = "存档"; break;
+                case ValueSources.Model: range.Text = "模型"; break;
+                case ValueSources.System: range.Text = "系统参数"; break;
+                case ValueSources.Input: range.Text = "外部输入"; break;
+                default: break;
+            }
         }
 
         public enum ValueSources

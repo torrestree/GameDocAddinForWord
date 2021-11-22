@@ -68,7 +68,7 @@ namespace GameDocAddinForWord
         }
         public void BtnDesignDocType_OnAction(Office.IRibbonControl control)
         {
-            DesignDoc.ValueType.Overwrite(application);
+            DesignDoc.ValueType.TryOverwrite(application);
         }
         public bool CkbDesignDocType_GetPressed(Office.IRibbonControl control)
         {
@@ -104,7 +104,7 @@ namespace GameDocAddinForWord
 
             ribbon.InvalidateControl("BtnDesignDocType");
 
-            DesignDoc.ValueType.Overwrite(application);
+            DesignDoc.ValueType.TryOverwrite(application);
         }
 
         public string BtnDesignDocSource_GetLabel(Office.IRibbonControl control)
@@ -121,7 +121,7 @@ namespace GameDocAddinForWord
         }
         public void BtnDesignDocSource_OnAction(Office.IRibbonControl control)
         {
-            DesignDoc.ValueSource.Overwirte(application);
+            DesignDoc.ValueSource.TryOverwrite(application);
         }
         public bool CkbDesignDocSource_GetPressed(Office.IRibbonControl control)
         {
@@ -151,7 +151,17 @@ namespace GameDocAddinForWord
 
             ribbon.InvalidateControl("BtnDesignDocSource");
 
-            DesignDoc.ValueSource.Overwirte(application);
+            DesignDoc.ValueSource.TryOverwrite(application);
+        }
+
+        public void BtnDesignDocSimpleProperty_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.SimpleProperty.TryOverwrite(application);
+        }
+
+        public void BtnDesignDocCompoundProperty_OnAction(Office.IRibbonControl control)
+        {
+
         }
 
         #endregion

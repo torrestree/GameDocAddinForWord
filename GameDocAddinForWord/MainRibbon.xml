@@ -30,8 +30,8 @@
 						</menu>
 					</splitButton>
 					<separator id="SepDesignDoc2"/>
-					<button id="BtnDesignDocSimpleProperty" label="简单属性"/>
-					<button id="BtnDesignDocCompoundProperty" label="复合属性"/>
+					<button id="BtnDesignDocSimpleProperty" label="简单属性" onAction="BtnDesignDocSimpleProperty_OnAction"/>
+					<button id="BtnDesignDocCompoundProperty" label="复合属性" onAction="BtnDesignDocCompoundProperty_OnAction"/>
 				</group>
 				<group id="GroupDevelopDoc" label="开发文档">
 					<button id="BtnDevelopDocPropertyTable" label="属性表单"/>
