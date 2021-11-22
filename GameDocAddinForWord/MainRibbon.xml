@@ -3,7 +3,42 @@
 	<ribbon>
 		<tabs>
 			<tab id="TabGameDoc" label="游戏文档">
-				
+				<group id="GroupDesign" label="策划文档">
+					<button id="BtnDesignDashboardTable" label="面板表单" onAction="BtnDesignDashboardTable_OnAction"/>
+					<button id="BtnDesignModelTable" label="模型表单" onAction="BtnDesignModelTable_OnAction"/>
+					<button id="BtnDesignSaveTable" label="存档表单" onAction="BtnDesignSaveTable_OnAction"/>
+					<button id="BtnDesignEnumTable" label="枚举表单" onAction="BtnDesignEnumTable_OnAction"/>
+
+					<separator id="SepDesign1"/>
+
+					<box id="BoxDesign1">
+						<button id="BtnDesignValueType" label="数值类型" onAction="BtnDesignValueType_OnAction"/>
+						<dropDown id="CkbDesignValueType" showLabel="false" getItemCount="CkbDesignValueType_GetItemCount" getItemID="CkbDesignValueType_GetItemID" getItemLabel="CkbDesignValueType_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDesignValueType_OnAction"/>
+					</box>
+					<box id="BoxDesign2">
+						<button id="BtnDesignValueSource" label="数值来源" onAction="BtnDesignValueSource_OnAction"/>
+						<dropDown id="CkbDesignValueSource" showLabel="false" getItemCount="CkbDesignValueSource_GetItemCount" getItemID="CkbDesignValueSource_GetItemID" getItemLabel="CkbDesignValueSource_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDesignValueSource_OnAction"/>
+					</box>
+
+					<separator id="SepDesign2"/>
+
+					<button id="BtnDesignSimpleProperty" label="简单属性" onAction="BtnDesignSimpleProperty_OnAction"/>
+					<button id="BtnDesignCompoundProperty" label="复合属性" onAction="BtnDesignCompoundProperty_OnAction"/>
+				</group>
+
+				<group id="GroupDevelop" label="开发文档">
+					<button id="BtnDevelopPropertyTable" label="属性表单"/>
+					<button id="BtnDevelopEventTable" label="事件表单"/>
+					<button id="BtnDevelopMethodTable" label="方法表单"/>
+					<button id="BtnDevelopEnumTable" label="枚举表单"/>
+
+					<separator id="SepDevelop1"/>
+
+					<box id="BoxDevelop1">
+						<button id="BtnDevelopValueType" label="数值类型"/>
+						<dropDown id="CkbDevelopValueType" showLabel="false"/>
+					</box>
+				</group>
 			</tab>
 		</tabs>
 	</ribbon>

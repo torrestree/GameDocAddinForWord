@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameDocAddinForWord.Common;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -34,8 +35,75 @@ namespace GameDocAddinForWord
             ribbon = ribbonUI;
             application = Globals.ThisAddIn.Application;
         }
+        public int SetDefaultIndex(Office.IRibbonControl control) => 0;
 
-        
+        public void BtnDesignDashboardTable_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.DashboardTable.Insert(application);
+        }
+        public void BtnDesignModelTable_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.ModelTable.Insert(application);
+        }
+        public void BtnDesignSaveTable_OnAction(Office.IRibbonControl control)
+        {
+            MessageBox.Show(Helpers.MsgUnderDeveloping);
+        }
+        public void BtnDesignEnumTable_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.EnumTable.Insert(application);
+        }
+
+        public void BtnDesignValueType_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.PropertyType.TryOverwrite(application);
+        }
+        public int CkbDesignValueType_GetItemCount(Office.IRibbonControl control)
+        {
+            return DesignDoc.PropertyType.Items.Count;
+        }
+        public string CkbDesignValueType_GetItemID(Office.IRibbonControl control, int index)
+        {
+            return DesignDoc.PropertyType.Items[index].Id;
+        }
+        public string CkbDesignValueType_GetItemLabel(Office.IRibbonControl control, int index)
+        {
+            return DesignDoc.PropertyType.Items[index].Label;
+        }
+        public void CkbDesignValueType_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
+        {
+            DesignDoc.PropertyType.SelectedIndex = selectedIndex;
+        }
+
+        public void BtnDesignValueSource_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.PropertySource.TryOverwrite(application);
+        }
+        public int CkbDesignValueSource_GetItemCount(Office.IRibbonControl control)
+        {
+            return DesignDoc.PropertySource.Items.Count;
+        }
+        public string CkbDesignValueSource_GetItemID(Office.IRibbonControl control, int index)
+        {
+            return DesignDoc.PropertySource.Items[index].Id;
+        }
+        public string CkbDesignValueSource_GetItemLabel(Office.IRibbonControl control, int index)
+        {
+            return DesignDoc.PropertySource.Items[index].Label;
+        }
+        public void CkbDesignValueSource_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
+        {
+            DesignDoc.PropertySource.SelectedIndex = selectedIndex;
+        }
+
+        public void BtnDesignSimpleProperty_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.SimpleProperty.TryOverwrite(application);
+        }
+        public void BtnDesignCompoundProperty_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.CompoundProperty.TryOverwrite(application);
+        }
 
         #endregion
 
