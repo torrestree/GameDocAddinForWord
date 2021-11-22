@@ -105,6 +105,23 @@ namespace GameDocAddinForWord
             DesignDoc.CompoundProperty.TryOverwrite(application);
         }
 
+        public void BtnDevelopPropertyTable_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.ClassTable.Insert(application, DevelopDoc.ClassTable.TableTypes.Property);
+        }
+        public void BtnDevelopEventTable_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.ClassTable.Insert(application, DevelopDoc.ClassTable.TableTypes.Event);
+        }
+        public void BtnDevelopMethodTable_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.ClassTable.Insert(application, DevelopDoc.ClassTable.TableTypes.Method);
+        }
+        public void BtnDevelopEnumTable_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.EnumTable.Insert(application);
+        }
+
         #endregion
 
         #region Helpers

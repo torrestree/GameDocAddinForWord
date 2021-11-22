@@ -27,10 +27,10 @@
 				</group>
 
 				<group id="GroupDevelop" label="开发文档">
-					<button id="BtnDevelopPropertyTable" label="属性表单"/>
-					<button id="BtnDevelopEventTable" label="事件表单"/>
-					<button id="BtnDevelopMethodTable" label="方法表单"/>
-					<button id="BtnDevelopEnumTable" label="枚举表单"/>
+					<button id="BtnDevelopPropertyTable" label="属性表单" onAction="BtnDevelopPropertyTable_OnAction"/>
+					<button id="BtnDevelopEventTable" label="事件表单" onAction="BtnDevelopEventTable_OnAction"/>
+					<button id="BtnDevelopMethodTable" label="方法表单" onAction="BtnDevelopMethodTable_OnAction"/>
+					<button id="BtnDevelopEnumTable" label="枚举表单" onAction="BtnDevelopEnumTable_OnAction"/>
 
 					<separator id="SepDevelop1"/>
 

@@ -165,6 +165,8 @@
     <Compile Include="DesignDoc\PropertySource.cs" />
     <Compile Include="DesignDoc\PropertyType.cs" />
     <Compile Include="DesignDoc\SimpleProperty.cs" />
+    <Compile Include="DevelopDoc\ClassTable.cs" />
+    <Compile Include="DevelopDoc\EnumTable.cs" />
     <Compile Include="MainRibbon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -200,9 +202,7 @@
   <ItemGroup>
     <EmbeddedResource Include="MainRibbon.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DevelopDoc\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
