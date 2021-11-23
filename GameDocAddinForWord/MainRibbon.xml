@@ -13,17 +13,18 @@
 
 					<box id="BoxDesign1">
 						<button id="BtnDesignPropertyType" label="数值类型" onAction="BtnDesignPropertyType_OnAction"/>
-						<dropDown id="CkbDesignPropertyType" showLabel="false" getItemCount="CkbDesignPropertyType_GetItemCount" getItemID="CkbDesignPropertyType_GetItemID" getItemLabel="CkbDesignPropertyType_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDesignPropertyType_OnAction"/>
+						<dropDown id="CkbDesignPropertyType" showLabel="false" getItemCount="CkbDesignPropertyType_GetItemCount" getItemID="CkbDesignPropertyType_GetItemID" getItemLabel="CkbDesignPropertyType_GetItemLabel" getSelectedItemIndex="CkbDesignPropertyType_GetSelectedItemIndex" onAction="CkbDesignPropertyType_OnAction"/>
 					</box>
 					<box id="BoxDesign2">
 						<button id="BtnDesignPropertySource" label="数值来源" onAction="BtnDesignPropertySource_OnAction"/>
-						<dropDown id="CkbDesignPropertySource" showLabel="false" getItemCount="CkbDesignPropertySource_GetItemCount" getItemID="CkbDesignPropertySource_GetItemID" getItemLabel="CkbDesignPropertySource_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDesignPropertySource_OnAction"/>
+						<dropDown id="CkbDesignPropertySource" showLabel="false" getItemCount="CkbDesignPropertySource_GetItemCount" getItemID="CkbDesignPropertySource_GetItemID" getItemLabel="CkbDesignPropertySource_GetItemLabel" getSelectedItemIndex="CkbDesignPropertySource_GetSelectedItemIndex" onAction="CkbDesignPropertySource_OnAction"/>
 					</box>
+					<button id="BtnDesignSimpleProperty" label="简单属性" onAction="BtnDesignSimpleProperty_OnAction"/>
 
 					<separator id="SepDesign2"/>
-
-					<button id="BtnDesignSimpleProperty" label="简单属性" onAction="BtnDesignSimpleProperty_OnAction"/>
-					<button id="BtnDesignCompoundProperty" label="复合属性" onAction="BtnDesignCompoundProperty_OnAction"/>
+					
+					<button id="BtnDesignCompoundPropertyInt" label="复合属性（整型）" onAction="BtnDesignCompoundPropertyInt_OnAction"/>
+					<button id="BtnDesignCompoundPropertyFloat" label="复合属性（浮点）" onAction="BtnDesignCompoundPropertyFloat_OnAction"/>
 				</group>
 
 				<group id="GroupDevelop" label="开发文档">
@@ -36,7 +37,7 @@
 
 					<box id="BoxDevelop1">
 						<button id="BtnDevelopPropertyType" label="数值类型" onAction="BtnDevelopPropertyType_OnAction"/>
-						<dropDown id="CkbDevelopPropertyType" showLabel="false" getItemCount="CkbDevelopPropertyType_GetItemCount" getItemID="CkbDevelopPropertyType_GetItemID" getItemLabel="CkbDevelopPropertyType_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDevelopPropertyType_OnAction"/>
+						<dropDown id="CkbDevelopPropertyType" showLabel="false" getItemCount="CkbDevelopPropertyType_GetItemCount" getItemID="CkbDevelopPropertyType_GetItemID" getItemLabel="CkbDevelopPropertyType_GetItemLabel" getSelectedItemIndex="CkbDevelopPropertyType_GetSelectedItemIndex" onAction="CkbDevelopPropertyType_OnAction"/>
 					</box>
 				</group>
 			</tab>

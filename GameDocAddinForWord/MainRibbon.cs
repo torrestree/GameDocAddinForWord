@@ -35,7 +35,6 @@ namespace GameDocAddinForWord
             ribbon = ribbonUI;
             application = Globals.ThisAddIn.Application;
         }
-        public int SetDefaultIndex(Office.IRibbonControl control) => 0;
 
         public void BtnDesignDashboardTable_OnAction(Office.IRibbonControl control)
         {
@@ -70,6 +69,10 @@ namespace GameDocAddinForWord
         {
             return DesignDoc.PropertyType.Items[index].Label;
         }
+        public int CkbDesignPropertyType_GetSelectedItemIndex(Office.IRibbonControl control)
+        {
+            return DesignDoc.PropertyType.SelectedIndex;
+        }
         public void CkbDesignPropertyType_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
         {
             DesignDoc.PropertyType.SelectedIndex = selectedIndex;
@@ -91,6 +94,10 @@ namespace GameDocAddinForWord
         {
             return DesignDoc.PropertySource.Items[index].Label;
         }
+        public int CkbDesignPropertySource_GetSelectedItemIndex(Office.IRibbonControl control)
+        {
+            return DesignDoc.PropertySource.SelectedIndex;
+        }
         public void CkbDesignPropertySource_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
         {
             DesignDoc.PropertySource.SelectedIndex = selectedIndex;
@@ -100,9 +107,13 @@ namespace GameDocAddinForWord
         {
             DesignDoc.SimpleProperty.TryOverwrite(application);
         }
-        public void BtnDesignCompoundProperty_OnAction(Office.IRibbonControl control)
+        public void BtnDesignCompoundPropertyInt_OnAction(Office.IRibbonControl control)
         {
-            DesignDoc.CompoundProperty.TryOverwrite(application);
+            DesignDoc.CompoundProperty.TryOverwrite(application, true);
+        }
+        public void BtnDesignCompoundPropertyFloat_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.CompoundProperty.TryOverwrite(application, false);
         }
 
         public void BtnDevelopPropertyTable_OnAction(Office.IRibbonControl control)
@@ -137,6 +148,10 @@ namespace GameDocAddinForWord
         public string CkbDevelopPropertyType_GetItemLabel(Office.IRibbonControl control, int index)
         {
             return DevelopDoc.PropertyType.Items[index].Label;
+        }
+        public int CkbDevelopPropertyType_GetSelectedItemIndex(Office.IRibbonControl control)
+        {
+            return DevelopDoc.PropertyType.SelectedIndex;
         }
         public void CkbDevelopPropertyType_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
         {
