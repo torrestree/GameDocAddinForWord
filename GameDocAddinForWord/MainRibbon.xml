@@ -12,12 +12,12 @@
 					<separator id="SepDesign1"/>
 
 					<box id="BoxDesign1">
-						<button id="BtnDesignValueType" label="数值类型" onAction="BtnDesignValueType_OnAction"/>
-						<dropDown id="CkbDesignValueType" showLabel="false" getItemCount="CkbDesignValueType_GetItemCount" getItemID="CkbDesignValueType_GetItemID" getItemLabel="CkbDesignValueType_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDesignValueType_OnAction"/>
+						<button id="BtnDesignPropertyType" label="数值类型" onAction="BtnDesignPropertyType_OnAction"/>
+						<dropDown id="CkbDesignPropertyType" showLabel="false" getItemCount="CkbDesignPropertyType_GetItemCount" getItemID="CkbDesignPropertyType_GetItemID" getItemLabel="CkbDesignPropertyType_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDesignPropertyType_OnAction"/>
 					</box>
 					<box id="BoxDesign2">
-						<button id="BtnDesignValueSource" label="数值来源" onAction="BtnDesignValueSource_OnAction"/>
-						<dropDown id="CkbDesignValueSource" showLabel="false" getItemCount="CkbDesignValueSource_GetItemCount" getItemID="CkbDesignValueSource_GetItemID" getItemLabel="CkbDesignValueSource_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDesignValueSource_OnAction"/>
+						<button id="BtnDesignPropertySource" label="数值来源" onAction="BtnDesignPropertySource_OnAction"/>
+						<dropDown id="CkbDesignPropertySource" showLabel="false" getItemCount="CkbDesignPropertySource_GetItemCount" getItemID="CkbDesignPropertySource_GetItemID" getItemLabel="CkbDesignPropertySource_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDesignPropertySource_OnAction"/>
 					</box>
 
 					<separator id="SepDesign2"/>
@@ -35,8 +35,8 @@
 					<separator id="SepDevelop1"/>
 
 					<box id="BoxDevelop1">
-						<button id="BtnDevelopValueType" label="数值类型"/>
-						<dropDown id="CkbDevelopValueType" showLabel="false"/>
+						<button id="BtnDevelopPropertyType" label="数值类型" onAction="BtnDevelopPropertyType_OnAction"/>
+						<dropDown id="CkbDevelopPropertyType" showLabel="false" getItemCount="CkbDevelopPropertyType_GetItemCount" getItemID="CkbDevelopPropertyType_GetItemID" getItemLabel="CkbDevelopPropertyType_GetItemLabel" getSelectedItemIndex="SetDefaultIndex" onAction="CkbDevelopPropertyType_OnAction"/>
 					</box>
 				</group>
 			</tab>

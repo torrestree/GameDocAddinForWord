@@ -167,6 +167,7 @@
     <Compile Include="DesignDoc\SimpleProperty.cs" />
     <Compile Include="DevelopDoc\ClassTable.cs" />
     <Compile Include="DevelopDoc\EnumTable.cs" />
+    <Compile Include="DevelopDoc\PropertyType.cs" />
     <Compile Include="MainRibbon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

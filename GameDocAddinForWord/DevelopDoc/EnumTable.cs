@@ -12,7 +12,7 @@ namespace GameDocAddinForWord.DevelopDoc
     {
         public static void Insert(Word.Application application)
         {
-            Word.Table table = application.InsertTable(3);
+            Word.Table table = application.InsertTable(2);
             SetTitleRow(table);
             application.Selection.MoveDown();
         }

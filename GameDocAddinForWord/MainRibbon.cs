@@ -54,44 +54,44 @@ namespace GameDocAddinForWord
             DesignDoc.EnumTable.Insert(application);
         }
 
-        public void BtnDesignValueType_OnAction(Office.IRibbonControl control)
+        public void BtnDesignPropertyType_OnAction(Office.IRibbonControl control)
         {
             DesignDoc.PropertyType.TryOverwrite(application);
         }
-        public int CkbDesignValueType_GetItemCount(Office.IRibbonControl control)
+        public int CkbDesignPropertyType_GetItemCount(Office.IRibbonControl control)
         {
             return DesignDoc.PropertyType.Items.Count;
         }
-        public string CkbDesignValueType_GetItemID(Office.IRibbonControl control, int index)
+        public string CkbDesignPropertyType_GetItemID(Office.IRibbonControl control, int index)
         {
             return DesignDoc.PropertyType.Items[index].Id;
         }
-        public string CkbDesignValueType_GetItemLabel(Office.IRibbonControl control, int index)
+        public string CkbDesignPropertyType_GetItemLabel(Office.IRibbonControl control, int index)
         {
             return DesignDoc.PropertyType.Items[index].Label;
         }
-        public void CkbDesignValueType_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
+        public void CkbDesignPropertyType_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
         {
             DesignDoc.PropertyType.SelectedIndex = selectedIndex;
         }
 
-        public void BtnDesignValueSource_OnAction(Office.IRibbonControl control)
+        public void BtnDesignPropertySource_OnAction(Office.IRibbonControl control)
         {
             DesignDoc.PropertySource.TryOverwrite(application);
         }
-        public int CkbDesignValueSource_GetItemCount(Office.IRibbonControl control)
+        public int CkbDesignPropertySource_GetItemCount(Office.IRibbonControl control)
         {
             return DesignDoc.PropertySource.Items.Count;
         }
-        public string CkbDesignValueSource_GetItemID(Office.IRibbonControl control, int index)
+        public string CkbDesignPropertySource_GetItemID(Office.IRibbonControl control, int index)
         {
             return DesignDoc.PropertySource.Items[index].Id;
         }
-        public string CkbDesignValueSource_GetItemLabel(Office.IRibbonControl control, int index)
+        public string CkbDesignPropertySource_GetItemLabel(Office.IRibbonControl control, int index)
         {
             return DesignDoc.PropertySource.Items[index].Label;
         }
-        public void CkbDesignValueSource_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
+        public void CkbDesignPropertySource_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
         {
             DesignDoc.PropertySource.SelectedIndex = selectedIndex;
         }
@@ -120,6 +120,27 @@ namespace GameDocAddinForWord
         public void BtnDevelopEnumTable_OnAction(Office.IRibbonControl control)
         {
             DevelopDoc.EnumTable.Insert(application);
+        }
+
+        public void BtnDevelopPropertyType_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.PropertyType.TryOverwrite(application);
+        }
+        public int CkbDevelopPropertyType_GetItemCount(Office.IRibbonControl control)
+        {
+            return DevelopDoc.PropertyType.Items.Count;
+        }
+        public string CkbDevelopPropertyType_GetItemID(Office.IRibbonControl control, int index)
+        {
+            return DevelopDoc.PropertyType.Items[index].Id;
+        }
+        public string CkbDevelopPropertyType_GetItemLabel(Office.IRibbonControl control, int index)
+        {
+            return DevelopDoc.PropertyType.Items[index].Label;
+        }
+        public void CkbDevelopPropertyType_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
+        {
+            DevelopDoc.PropertyType.SelectedIndex = selectedIndex;
         }
 
         #endregion

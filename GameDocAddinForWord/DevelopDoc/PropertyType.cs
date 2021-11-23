@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace GameDocAddinForWord.DesignDoc
+namespace GameDocAddinForWord.DevelopDoc
 {
     internal static class PropertyType
     {
@@ -18,12 +18,13 @@ namespace GameDocAddinForWord.DesignDoc
         {
             Items = new List<CbxItemInfo>
             {
-                new CbxItemInfo { Id = "DesignTypeText", Label = "文本" },
-                new CbxItemInfo { Id = "DesignTypeInt", Label = "整型" },
-                new CbxItemInfo { Id = "DesignTypeFloat", Label = "浮点" },
-                new CbxItemInfo { Id = "DesignTypeBool", Label = "布尔" },
-                new CbxItemInfo { Id = "DesignTypeEnum", Label = "枚举" },
-                new CbxItemInfo { Id = "DesignTypeList", Label = "集合" }
+                new CbxItemInfo { Id = "DevelopTypeString", Label = "String" },
+                new CbxItemInfo { Id = "DevelopTypeInt", Label = "Int" },
+                new CbxItemInfo { Id = "DevelopTypeFloat", Label = "Float" },
+                new CbxItemInfo { Id = "DevelopTypeBool", Label = "Bool" },
+                new CbxItemInfo { Id = "DevelopTypeAction", Label = "Action" },
+                new CbxItemInfo { Id = "DevelopTypeFunc", Label = "Func" },
+                new CbxItemInfo { Id = "DevelopTypeVoid", Label = "Void" }
             };
         }
 

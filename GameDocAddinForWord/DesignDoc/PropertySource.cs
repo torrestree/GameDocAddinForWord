@@ -18,10 +18,10 @@ namespace GameDocAddinForWord.DesignDoc
         {
             Items = new List<CbxItemInfo>
             {
-                new CbxItemInfo(){ Id = "DesignSourceSave", Label = "存档" },
-                new CbxItemInfo(){ Id = "DesignSourceModel", Label = "模型" },
-                new CbxItemInfo(){ Id = "DesignSourceSystem", Label = "系统参数" },
-                new CbxItemInfo(){ Id = "DesignSourceInput", Label = "参数传入" }
+                new CbxItemInfo { Id = "DesignSourceSave", Label = "存档" },
+                new CbxItemInfo { Id = "DesignSourceModel", Label = "模型" },
+                new CbxItemInfo { Id = "DesignSourceSystem", Label = "系统参数" },
+                new CbxItemInfo { Id = "DesignSourceInput", Label = "参数传入" }
             };
         }
 
