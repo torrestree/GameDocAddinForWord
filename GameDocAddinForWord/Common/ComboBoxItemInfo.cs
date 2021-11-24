@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameDocAddinForWord.Common
 {
-    internal class CbxItemInfo
+    internal class ComboBoxItemInfo
     {
         public string Id { get; set; }
         public string Label { get; set; }

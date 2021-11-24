@@ -1,5 +1,4 @@
-﻿using GameDocAddinForWord.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -36,126 +35,175 @@ namespace GameDocAddinForWord
             application = Globals.ThisAddIn.Application;
         }
 
-        public void BtnDesignDashboardTable_OnAction(Office.IRibbonControl control)
+        public void BtnDesignTableDashboard_OnAction(Office.IRibbonControl control)
         {
-            DesignDoc.DashboardTable.Insert(application);
+            DesignDoc.TableGenerator.Insert(application, DesignDoc.TableGenerator.TableTypes.Dashboard);
         }
-        public void BtnDesignModelTable_OnAction(Office.IRibbonControl control)
+        public void BtnDesignTableModel_OnAction(Office.IRibbonControl control)
         {
-            DesignDoc.ModelTable.Insert(application);
+            DesignDoc.TableGenerator.Insert(application, DesignDoc.TableGenerator.TableTypes.Model);
         }
-        public void BtnDesignSaveTable_OnAction(Office.IRibbonControl control)
+        public void BtnDesignTableSave_OnAction(Office.IRibbonControl control)
         {
-            MessageBox.Show(Helpers.MsgUnderDeveloping);
+            DesignDoc.TableGenerator.Insert(application, DesignDoc.TableGenerator.TableTypes.Save);
         }
-        public void BtnDesignEnumTable_OnAction(Office.IRibbonControl control)
+        public void BtnDesignTableEnum_OnAction(Office.IRibbonControl control)
         {
-            DesignDoc.EnumTable.Insert(application);
-        }
-
-        public void BtnDesignPropertyType_OnAction(Office.IRibbonControl control)
-        {
-            DesignDoc.PropertyType.TryOverwrite(application);
-        }
-        public int CkbDesignPropertyType_GetItemCount(Office.IRibbonControl control)
-        {
-            return DesignDoc.PropertyType.Items.Count;
-        }
-        public string CkbDesignPropertyType_GetItemID(Office.IRibbonControl control, int index)
-        {
-            return DesignDoc.PropertyType.Items[index].Id;
-        }
-        public string CkbDesignPropertyType_GetItemLabel(Office.IRibbonControl control, int index)
-        {
-            return DesignDoc.PropertyType.Items[index].Label;
-        }
-        public int CkbDesignPropertyType_GetSelectedItemIndex(Office.IRibbonControl control)
-        {
-            return DesignDoc.PropertyType.SelectedIndex;
-        }
-        public void CkbDesignPropertyType_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
-        {
-            DesignDoc.PropertyType.SelectedIndex = selectedIndex;
+            DesignDoc.TableGenerator.Insert(application, DesignDoc.TableGenerator.TableTypes.Enum);
         }
 
-        public void BtnDesignPropertySource_OnAction(Office.IRibbonControl control)
+        public void BtnDesignPropertyTypeText_OnAction(Office.IRibbonControl control)
         {
-            DesignDoc.PropertySource.TryOverwrite(application);
+            DesignDoc.PropertyType.TryOverwrite(application, DesignDoc.PropertyType.PropertyTypes.Text);
         }
-        public int CkbDesignPropertySource_GetItemCount(Office.IRibbonControl control)
+        public void BtnDesignPropertyTypeInt_OnAction(Office.IRibbonControl control)
         {
-            return DesignDoc.PropertySource.Items.Count;
+            DesignDoc.PropertyType.TryOverwrite(application, DesignDoc.PropertyType.PropertyTypes.Int);
         }
-        public string CkbDesignPropertySource_GetItemID(Office.IRibbonControl control, int index)
+        public void BtnDesignPropertyTypeFloat_OnAction(Office.IRibbonControl control)
         {
-            return DesignDoc.PropertySource.Items[index].Id;
+            DesignDoc.PropertyType.TryOverwrite(application, DesignDoc.PropertyType.PropertyTypes.Float);
         }
-        public string CkbDesignPropertySource_GetItemLabel(Office.IRibbonControl control, int index)
+        public void BtnDesignPropertyTypeBool_OnAction(Office.IRibbonControl control)
         {
-            return DesignDoc.PropertySource.Items[index].Label;
+            DesignDoc.PropertyType.TryOverwrite(application, DesignDoc.PropertyType.PropertyTypes.Bool);
         }
-        public int CkbDesignPropertySource_GetSelectedItemIndex(Office.IRibbonControl control)
+        public void BtnDesignPropertyTypeEnum_OnAction(Office.IRibbonControl control)
         {
-            return DesignDoc.PropertySource.SelectedIndex;
+            DesignDoc.PropertyType.TryOverwrite(application, DesignDoc.PropertyType.PropertyTypes.Enum);
         }
-        public void CkbDesignPropertySource_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
+        public void BtnDesignPropertyTypeList_OnAction(Office.IRibbonControl control)
         {
-            DesignDoc.PropertySource.SelectedIndex = selectedIndex;
-        }
-
-        public void BtnDesignSimpleProperty_OnAction(Office.IRibbonControl control)
-        {
-            DesignDoc.SimpleProperty.TryOverwrite(application);
-        }
-        public void BtnDesignCompoundPropertyInt_OnAction(Office.IRibbonControl control)
-        {
-            DesignDoc.CompoundProperty.TryOverwrite(application, true);
-        }
-        public void BtnDesignCompoundPropertyFloat_OnAction(Office.IRibbonControl control)
-        {
-            DesignDoc.CompoundProperty.TryOverwrite(application, false);
+            DesignDoc.PropertyType.TryOverwrite(application, DesignDoc.PropertyType.PropertyTypes.List);
         }
 
-        public void BtnDevelopPropertyTable_OnAction(Office.IRibbonControl control)
+        public void BtnDesignPropertySourceSave_OnAction(Office.IRibbonControl control)
         {
-            DevelopDoc.ClassTable.Insert(application, DevelopDoc.ClassTable.TableTypes.Property);
+            DesignDoc.PropertySource.TryOverwrite(application, DesignDoc.PropertySource.PropertySources.Save);
         }
-        public void BtnDevelopEventTable_OnAction(Office.IRibbonControl control)
+        public void BtnDesignPropertySourceModel_OnAction(Office.IRibbonControl control)
         {
-            DevelopDoc.ClassTable.Insert(application, DevelopDoc.ClassTable.TableTypes.Event);
+            DesignDoc.PropertySource.TryOverwrite(application, DesignDoc.PropertySource.PropertySources.Model);
         }
-        public void BtnDevelopMethodTable_OnAction(Office.IRibbonControl control)
+        public void BtnDesignPropertySourceSystem_OnAction(Office.IRibbonControl control)
         {
-            DevelopDoc.ClassTable.Insert(application, DevelopDoc.ClassTable.TableTypes.Method);
+            DesignDoc.PropertySource.TryOverwrite(application, DesignDoc.PropertySource.PropertySources.System);
         }
-        public void BtnDevelopEnumTable_OnAction(Office.IRibbonControl control)
+        public void BtnDesignPropertySourceInput_OnAction(Office.IRibbonControl control)
         {
-            DevelopDoc.EnumTable.Insert(application);
+            DesignDoc.PropertySource.TryOverwrite(application, DesignDoc.PropertySource.PropertySources.Input);
         }
 
-        public void BtnDevelopPropertyType_OnAction(Office.IRibbonControl control)
+        public int CbbDesignPropertyDashboardType_GetItemCount(Office.IRibbonControl control)
         {
-            DevelopDoc.PropertyType.TryOverwrite(application);
+            return DesignDoc.PropertyDashboard.TypeItems.Count;
         }
-        public int CkbDevelopPropertyType_GetItemCount(Office.IRibbonControl control)
+        public string CbbDesignPropertyDashboardType_GetItemId(Office.IRibbonControl control, int index)
         {
-            return DevelopDoc.PropertyType.Items.Count;
+            return DesignDoc.PropertyDashboard.TypeItems[index].Id;
         }
-        public string CkbDevelopPropertyType_GetItemID(Office.IRibbonControl control, int index)
+        public string CbbDesignPropertyDashboardType_GetItemLabel(Office.IRibbonControl control, int index)
         {
-            return DevelopDoc.PropertyType.Items[index].Id;
+            return DesignDoc.PropertyDashboard.TypeItems[index].Label;
         }
-        public string CkbDevelopPropertyType_GetItemLabel(Office.IRibbonControl control, int index)
+        public int CbbDesignPropertyDashboardType_GetSelectedItemIndex(Office.IRibbonControl control)
         {
-            return DevelopDoc.PropertyType.Items[index].Label;
+            return DesignDoc.PropertyDashboard.SelectedTypeIndex;
         }
-        public int CkbDevelopPropertyType_GetSelectedItemIndex(Office.IRibbonControl control)
+        public void CbbDesignPropertyDashboardType_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
         {
-            return DevelopDoc.PropertyType.SelectedIndex;
+            DesignDoc.PropertyDashboard.SelectedTypeIndex = selectedIndex;
         }
-        public void CkbDevelopPropertyType_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
+
+        public int CbbDesignPropertyDashboardSource_GetItemCount(Office.IRibbonControl control)
         {
-            DevelopDoc.PropertyType.SelectedIndex = selectedIndex;
+            return DesignDoc.PropertyDashboard.SourceItems.Count;
+        }
+        public string CbbDesignPropertyDashboardSource_GetItemId(Office.IRibbonControl control, int index)
+        {
+            return DesignDoc.PropertyDashboard.SourceItems[index].Id;
+        }
+        public string CbbDesignPropertyDashboardSource_GetItemLabel(Office.IRibbonControl control, int index)
+        {
+            return DesignDoc.PropertyDashboard.SourceItems[index].Label;
+        }
+        public int CbbDesignPropertyDashboardSource_GetSelectedItemIndex(Office.IRibbonControl control)
+        {
+            return DesignDoc.PropertyDashboard.SelectedSourceIndex;
+        }
+        public void CbbDesignPropertyDashboardSource_OnAction(Office.IRibbonControl control, string selectedId, int selectedIndex)
+        {
+            DesignDoc.PropertyDashboard.SelectedSourceIndex = selectedIndex;
+        }
+
+        public void BtnDesignPropertyDashboardSimple_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.PropertyDashboard.TryOverwrite(application, DesignDoc.PropertyDashboard.OverwriteTypes.Simple);
+        }
+
+        public void BtnDesignPropertyDashboardCompoundInt_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.PropertyDashboard.TryOverwrite(application, DesignDoc.PropertyDashboard.OverwriteTypes.CompoundInt);
+        }
+        public void BtnDesignPropertyDashboardCompoundFloat_OnAction(Office.IRibbonControl control)
+        {
+            DesignDoc.PropertyDashboard.TryOverwrite(application, DesignDoc.PropertyDashboard.OverwriteTypes.CompoundFloat);
+        }
+
+        public void BtnDevelopTableProperty_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.TableGenerator.Insert(application, DevelopDoc.TableGenerator.TableTypes.Property);
+        }
+        public void BtnDevelopTableEvent_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.TableGenerator.Insert(application, DevelopDoc.TableGenerator.TableTypes.Event);
+        }
+        public void BtnDevelopTableMethod_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.TableGenerator.Insert(application, DevelopDoc.TableGenerator.TableTypes.Method);
+        }
+        public void BtnDevelopTableEnum_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.TableGenerator.Insert(application, DevelopDoc.TableGenerator.TableTypes.Enum);
+        }
+
+        public void BtnDevelopPropertyTypeString_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.PropertyType.TryOverwrite(application, DevelopDoc.PropertyType.PropertyTypes.String);
+        }
+        public void BtnDevelopPropertyTypeInt_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.PropertyType.TryOverwrite(application, DevelopDoc.PropertyType.PropertyTypes.Int);
+        }
+        public void BtnDevelopPropertyTypeFloat_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.PropertyType.TryOverwrite(application, DevelopDoc.PropertyType.PropertyTypes.Float);
+        }
+        public void BtnDevelopPropertyTypeBool_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.PropertyType.TryOverwrite(application, DevelopDoc.PropertyType.PropertyTypes.Bool);
+        }
+        public void BtnDevelopPropertyTypeEnum_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.PropertyType.TryOverwrite(application, DevelopDoc.PropertyType.PropertyTypes.Enum);
+        }
+        public void BtnDevelopPropertyTypeList_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.PropertyType.TryOverwrite(application, DevelopDoc.PropertyType.PropertyTypes.List);
+        }
+
+        public void BtnDevelopEventTypeAction_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.EventType.TryOverwrite(application, DevelopDoc.EventType.EventTypes.Action);
+        }
+        public void BtnDevelopEventTypeFunc_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.EventType.TryOverwrite(application, DevelopDoc.EventType.EventTypes.Func);
+        }
+
+        public void BtnDevelopMethodTypeVoid_OnAction(Office.IRibbonControl control)
+        {
+            DevelopDoc.MethodType.TryOverwrite(application);
         }
 
         #endregion

@@ -4,41 +4,77 @@
 		<tabs>
 			<tab id="TabGameDoc" label="游戏文档">
 				<group id="GroupDesign" label="策划文档">
-					<button id="BtnDesignDashboardTable" label="面板表单" onAction="BtnDesignDashboardTable_OnAction"/>
-					<button id="BtnDesignModelTable" label="模型表单" onAction="BtnDesignModelTable_OnAction"/>
-					<button id="BtnDesignSaveTable" label="存档表单" onAction="BtnDesignSaveTable_OnAction"/>
-					<button id="BtnDesignEnumTable" label="枚举表单" onAction="BtnDesignEnumTable_OnAction"/>
-
+					<button id="BtnDesignTableDashboard" label="面板表单" onAction="BtnDesignTableDashboard_OnAction"/>
+					<button id="BtnDesignTableModel" label="模型表单" onAction="BtnDesignTableModel_OnAction"/>
+					<button id="BtnDesignTableSave" label="存档表单" onAction="BtnDesignTableSave_OnAction"/>
+					<button id="BtnDesignTableEnum" label="枚举表单" onAction="BtnDesignTableEnum_OnAction"/>
+					
 					<separator id="SepDesign1"/>
-
-					<box id="BoxDesign1">
-						<button id="BtnDesignPropertyType" label="数值类型" onAction="BtnDesignPropertyType_OnAction"/>
-						<dropDown id="CkbDesignPropertyType" showLabel="false" getItemCount="CkbDesignPropertyType_GetItemCount" getItemID="CkbDesignPropertyType_GetItemID" getItemLabel="CkbDesignPropertyType_GetItemLabel" getSelectedItemIndex="CkbDesignPropertyType_GetSelectedItemIndex" onAction="CkbDesignPropertyType_OnAction"/>
-					</box>
-					<box id="BoxDesign2">
-						<button id="BtnDesignPropertySource" label="数值来源" onAction="BtnDesignPropertySource_OnAction"/>
-						<dropDown id="CkbDesignPropertySource" showLabel="false" getItemCount="CkbDesignPropertySource_GetItemCount" getItemID="CkbDesignPropertySource_GetItemID" getItemLabel="CkbDesignPropertySource_GetItemLabel" getSelectedItemIndex="CkbDesignPropertySource_GetSelectedItemIndex" onAction="CkbDesignPropertySource_OnAction"/>
-					</box>
-					<button id="BtnDesignSimpleProperty" label="简单属性" onAction="BtnDesignSimpleProperty_OnAction"/>
-
+					
+					<button id="BtnDesignPropertyTypeText" label="文本" onAction="BtnDesignPropertyTypeText_OnAction"/>
+					<button id="BtnDesignPropertyTypeInt" label="整型" onAction="BtnDesignPropertyTypeInt_OnAction"/>
+					<button id="BtnDesignPropertyTypeFloat" label="浮点" onAction="BtnDesignPropertyTypeFloat_OnAction"/>
+					<button id="BtnDesignPropertyTypeBool" label="布尔" onAction="BtnDesignPropertyTypeBool_OnAction"/>
+					<button id="BtnDesignPropertyTypeEnum" label="枚举" onAction="BtnDesignPropertyTypeEnum_OnAction"/>
+					<button id="BtnDesignPropertyTypeList" label="集合" onAction="BtnDesignPropertyTypeList_OnAction"/>
+					
 					<separator id="SepDesign2"/>
 					
-					<button id="BtnDesignCompoundPropertyInt" label="复合属性（整型）" onAction="BtnDesignCompoundPropertyInt_OnAction"/>
-					<button id="BtnDesignCompoundPropertyFloat" label="复合属性（浮点）" onAction="BtnDesignCompoundPropertyFloat_OnAction"/>
+					<box id="BoxDesignPropertySource1" boxStyle="vertical">
+						<button id="BtnDesignPropertySourceSave" label="存档" onAction="BtnDesignPropertySourceSave_OnAction"/>
+						<button id="BtnDesignPropertySourceModel" label="模型" onAction="BtnDesignPropertySourceModel_OnAction"/>
+					</box>
+					<box id="BoxDesignPropertySource2" boxStyle="vertical">
+						<button id="BtnDesignPropertySourceSystem" label="系统参数" onAction="BtnDesignPropertySourceSystem_OnAction"/>
+						<button id="BtnDesignPropertySourceInput" label="外部传入" onAction="BtnDesignPropertySourceInput_OnAction"/>
+					</box>
+					
+					<separator id="SepDesign3"/>
+
+					<box id="BoxDesignPropertyDashboard1" boxStyle="vertical">
+						<dropDown id="CbbDesignPropertyDashboardType" label="数值类型" onAction="CbbDesignPropertyDashboardType_OnAction"
+								  getItemCount="CbbDesignPropertyDashboardType_GetItemCount" 
+								  getItemID="CbbDesignPropertyDashboardType_GetItemId" 
+								  getItemLabel="CbbDesignPropertyDashboardType_GetItemLabel" 
+								  getSelectedItemIndex="CbbDesignPropertyDashboardType_GetSelectedItemIndex"/>
+						<dropDown id="CbbDesignPropertyDashboardSource" label="数值来源" onAction="CbbDesignPropertyDashboardSource_OnAction" 
+								  getItemCount="CbbDesignPropertyDashboardSource_GetItemCount" 
+								  getItemID="CbbDesignPropertyDashboardSource_GetItemId" 
+								  getItemLabel="CbbDesignPropertyDashboardSource_GetItemLabel" 
+								  getSelectedItemIndex="CbbDesignPropertyDashboardSource_GetSelectedItemIndex"/>
+					</box>
+					<box id="BoxDesignPropertyDashboard2" boxStyle="vertical">
+						<button id="BtnDesignPropertyDashboardSimple" label="简单属性" onAction="BtnDesignPropertyDashboardSimple_OnAction"/>
+					</box>
+					<box id="BoxDesignPropertyDashboard3" boxStyle="vertical">
+						<button id="BtnDesignPropertyDashboardCompoundInt" label="复合属性（整型）" onAction="BtnDesignPropertyDashboardCompoundInt_OnAction"/>
+						<button id="BtnDesignPropertyDashboardCompoundFloat" label="复合属性（浮点）" onAction="BtnDesignPropertyDashboardCompoundFloat_OnAction"/>
+					</box>
 				</group>
 
 				<group id="GroupDevelop" label="开发文档">
-					<button id="BtnDevelopPropertyTable" label="属性表单" onAction="BtnDevelopPropertyTable_OnAction"/>
-					<button id="BtnDevelopEventTable" label="事件表单" onAction="BtnDevelopEventTable_OnAction"/>
-					<button id="BtnDevelopMethodTable" label="方法表单" onAction="BtnDevelopMethodTable_OnAction"/>
-					<button id="BtnDevelopEnumTable" label="枚举表单" onAction="BtnDevelopEnumTable_OnAction"/>
+					<button id="BtnDevelopTableProperty" label="属性表单" onAction="BtnDevelopTableProperty_OnAction"/>
+					<button id="BtnDevelopTableEvent" label="事件表单" onAction="BtnDevelopTableEvent_OnAction"/>
+					<button id="BtnDevelopTableMethod" label="方法表单" onAction="BtnDevelopTableMethod_OnAction"/>
+					<button id="BtnDevelopTableEnum" label="枚举表单" onAction="BtnDevelopTableEnum_OnAction"/>
 
 					<separator id="SepDevelop1"/>
 
-					<box id="BoxDevelop1">
-						<button id="BtnDevelopPropertyType" label="数值类型" onAction="BtnDevelopPropertyType_OnAction"/>
-						<dropDown id="CkbDevelopPropertyType" showLabel="false" getItemCount="CkbDevelopPropertyType_GetItemCount" getItemID="CkbDevelopPropertyType_GetItemID" getItemLabel="CkbDevelopPropertyType_GetItemLabel" getSelectedItemIndex="CkbDevelopPropertyType_GetSelectedItemIndex" onAction="CkbDevelopPropertyType_OnAction"/>
-					</box>
+					<button id="BtnDevelopPropertyTypeString" label="String" onAction="BtnDevelopPropertyTypeString_OnAction"/>
+					<button id="BtnDevelopPropertyTypeInt" label="Int" onAction="BtnDevelopPropertyTypeInt_OnAction"/>
+					<button id="BtnDevelopPropertyTypeFloat" label="Float" onAction="BtnDevelopPropertyTypeFloat_OnAction"/>
+					<button id="BtnDevelopPropertyTypeBool" label="Bool" onAction="BtnDevelopPropertyTypeBool_OnAction"/>
+					<button id="BtnDevelopPropertyTypeEnum" label="Enum" onAction="BtnDevelopPropertyTypeEnum_OnAction"/>
+					<button id="BtnDevelopPropertyTypeList" label="List" onAction="BtnDevelopPropertyTypeList_OnAction"/>
+
+					<separator id="SepDevelop2"/>
+
+					<button id="BtnDevelopEventTypeAction" label="Action" onAction="BtnDevelopEventTypeAction_OnAction"/>
+					<button id="BtnDevelopEventTypeFunc" label="Func" onAction="BtnDevelopEventTypeFunc_OnAction"/>
+
+					<separator id="SepDevelop3"/>
+
+					<button id="BtnDevelopMethodTypeVoid" label="Void" onAction="BtnDevelopMethodTypeVoid_OnAction"/>
 				</group>
 			</tab>
 		</tabs>

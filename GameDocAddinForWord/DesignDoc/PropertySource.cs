@@ -1,5 +1,9 @@
 ﻿using GameDocAddinForWord.Common;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -7,28 +11,20 @@ namespace GameDocAddinForWord.DesignDoc
 {
     internal static class PropertySource
     {
-        public static List<CbxItemInfo> Items { get; set; }
-        public static int SelectedIndex { get; set; }
-        public static string SelectedLabel
-        {
-            get { return Items[SelectedIndex].Label; }
-        }
-
-        public static void Init()
-        {
-            Items = new List<CbxItemInfo>
-            {
-                new CbxItemInfo { Id = "DesignSourceSave", Label = "存档" },
-                new CbxItemInfo { Id = "DesignSourceModel", Label = "模型" },
-                new CbxItemInfo { Id = "DesignSourceSystem", Label = "系统参数" },
-                new CbxItemInfo { Id = "DesignSourceInput", Label = "参数传入" }
-            };
-        }
-
-        public static void TryOverwrite(Word.Application application)
+        public static void TryOverwrite(Word.Application application, PropertySources propertySource)
         {
             if (CanOverwrite(application, out int rowIndex, out Word.Table table))
-                Overwrite(rowIndex, table);
+            {
+                string value = default;
+                switch (propertySource)
+                {
+                    case PropertySources.Save: value = "存档"; break;
+                    case PropertySources.Model: value = "模型"; break;
+                    case PropertySources.System: value = "系统参数"; break;
+                    case PropertySources.Input: value = "外部传入"; break;
+                }
+                Overwrite(rowIndex, table, value);
+            }
             else
                 MessageBox.Show(Helpers.MsgUnmatchedTable);
         }
@@ -36,9 +32,17 @@ namespace GameDocAddinForWord.DesignDoc
         {
             return application.GetRowIndex(4, out rowIndex, out table);
         }
-        public static void Overwrite(int rowIndex, Word.Table table)
+        public static void Overwrite(int rowIndex, Word.Table table, string value)
         {
-            table.Rows[rowIndex].Cells[4].Range.Text = SelectedLabel;
+            table.Rows[rowIndex].Cells[4].Range.Text = value;
+        }
+
+        public enum PropertySources
+        {
+            Save,
+            Model,
+            System,
+            Input
         }
     }
 }

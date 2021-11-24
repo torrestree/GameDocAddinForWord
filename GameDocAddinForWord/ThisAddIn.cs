@@ -14,9 +14,7 @@ namespace GameDocAddinForWord
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            DesignDoc.PropertyType.Init();
-            DesignDoc.PropertySource.Init();
-            DevelopDoc.PropertyType.Init();
+            DesignDoc.PropertyDashboard.Init();
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)

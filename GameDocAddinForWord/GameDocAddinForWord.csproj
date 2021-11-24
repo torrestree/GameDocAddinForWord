@@ -156,18 +156,16 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="Common\CbxItemInfo.cs" />
+    <Compile Include="Common\ComboBoxItemInfo.cs" />
     <Compile Include="Common\Helpers.cs" />
-    <Compile Include="DesignDoc\CompoundProperty.cs" />
-    <Compile Include="DesignDoc\DashboardTable.cs" />
-    <Compile Include="DesignDoc\EnumTable.cs" />
-    <Compile Include="DesignDoc\ModelTable.cs" />
+    <Compile Include="DesignDoc\PropertyDashboard.cs" />
     <Compile Include="DesignDoc\PropertySource.cs" />
     <Compile Include="DesignDoc\PropertyType.cs" />
-    <Compile Include="DesignDoc\SimpleProperty.cs" />
-    <Compile Include="DevelopDoc\ClassTable.cs" />
-    <Compile Include="DevelopDoc\EnumTable.cs" />
+    <Compile Include="DesignDoc\TableGenerator.cs" />
+    <Compile Include="DevelopDoc\EventType.cs" />
+    <Compile Include="DevelopDoc\MethodType.cs" />
     <Compile Include="DevelopDoc\PropertyType.cs" />
+    <Compile Include="DevelopDoc\TableGenerator.cs" />
     <Compile Include="MainRibbon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

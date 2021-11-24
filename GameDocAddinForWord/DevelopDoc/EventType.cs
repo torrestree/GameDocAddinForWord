@@ -9,24 +9,20 @@ using Word = Microsoft.Office.Interop.Word;
 
 namespace GameDocAddinForWord.DevelopDoc
 {
-    internal static class PropertyType
+    internal static class EventType
     {
-        public static void TryOverwrite(Word.Application application, PropertyTypes propertyType)
+        public static void TryOverwrite(Word.Application application, EventTypes eventType)
         {
             if (application.GetRowIndex(2, out int rowIndex, out Word.Table table))
-                table.Rows[rowIndex].Cells[2].Range.Text = propertyType.ToString();
+                table.Rows[rowIndex].Cells[2].Range.Text = eventType.ToString();
             else
                 MessageBox.Show(Helpers.MsgUnmatchedTable);
         }
 
-        public enum PropertyTypes
+        public enum EventTypes
         {
-            String,
-            Int,
-            Float,
-            Bool,
-            Enum,
-            List
+            Action,
+            Func
         }
     }
 }

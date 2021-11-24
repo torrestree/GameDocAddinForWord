@@ -9,24 +9,14 @@ using Word = Microsoft.Office.Interop.Word;
 
 namespace GameDocAddinForWord.DevelopDoc
 {
-    internal static class PropertyType
+    internal static class MethodType
     {
-        public static void TryOverwrite(Word.Application application, PropertyTypes propertyType)
+        public static void TryOverwrite(Word.Application application)
         {
             if (application.GetRowIndex(2, out int rowIndex, out Word.Table table))
-                table.Rows[rowIndex].Cells[2].Range.Text = propertyType.ToString();
+                table.Rows[rowIndex].Cells[2].Range.Text = "Void";
             else
                 MessageBox.Show(Helpers.MsgUnmatchedTable);
-        }
-
-        public enum PropertyTypes
-        {
-            String,
-            Int,
-            Float,
-            Bool,
-            Enum,
-            List
         }
     }
 }
